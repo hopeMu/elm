@@ -1,6 +1,7 @@
 <template>
     <div class="star" :class="starType">
-        <span v-for="itemClass in itemClasses" :class="itemClass" class="star-item"></span>
+        <!-- <span v-for="itemClass in itemClasses" :class="itemClass" class="star-item"></span> -->
+               <span v-for="(itemClass,index) in itemClasses" :class="itemClass" class="star-item" track-by="$index" :key="index"></span>
     </div>
 </template>
 
@@ -68,7 +69,7 @@ export default {
             .star-item
                 width 15px
                 height 15px
-                margin-right 16px
+                margin-right 6px
                 background-size 15px 15px
                 &:last-child
                     margin-right 0
